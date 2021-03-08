@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DeliveryDrone
 {
-    public class FileManager
+    public static class FileManager
     {
         private const int DefaultBufferSize = 4096;
         private const FileOptions DefaultOptions = FileOptions.Asynchronous | FileOptions.SequentialScan;
@@ -25,6 +25,11 @@ namespace DeliveryDrone
             }
 
             return lines;
+        }
+
+        public static async Task WriteFile(string path, IEnumerable<string> lines)
+        {
+            await File.WriteAllLinesAsync(path, lines);
         }
     }
 }
