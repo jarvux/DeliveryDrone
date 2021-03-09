@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,29 +13,26 @@ namespace DeliveryDrone
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            int maxNumberOfStopsPerDelivery = 4;
-            string directoryPath = "DeliveryRoutes";
-
-            for (int i = 1; i <= 6; i++)
-            {
-                string path = $"{directoryPath}\\in0{i}.txt";
-                var deliveries = await FileManager.ReadAllLinesAsync(path);
-
-                var delivery = new DeliveryManager();
-                var drone = new Drone.Drone();
-                var memoryDrone = new DroneMemory();
-                var results = delivery.Execute(drone, memoryDrone, deliveries, maxNumberOfStopsPerDelivery);
-                
-
-                var fileName = $"{directoryPath}\\out0{i}.txt";
-                await FileManager.WriteFile(fileName,
-                    results.Select(j => $"({j.GetCoordinate().GetX()},{j.GetCoordinate().GetY()},{j.GetOrientation()})"));
-            }
+            Console.WriteLine("Begin executing delivery");
             
+            const int maxNumberOfStopsPerDelivery = 3;
+            const string deliveryRoutes = "DeliveryRoutes";
 
-            Console.ReadKey();
+            
+           Parallel.ForEach(Directory.EnumerateFiles(deliveryRoutes, "*in*"), async file =>
+           {
+               Console.WriteLine($"Begin: file:{file}");
+               var content = await file.GetRoutesFromStringFileContent();
+               
+               await content
+                   .ExecuteRoutes(maxNumberOfStopsPerDelivery)
+                   .SetRoutesToStringFileContent($"{file.Replace("in", "out")}");
+               
+               Console.WriteLine($"End: file:{file}");
+           });
+
+           Console.WriteLine("End executing delivery");
+           Console.ReadKey();
         }
     }
 }

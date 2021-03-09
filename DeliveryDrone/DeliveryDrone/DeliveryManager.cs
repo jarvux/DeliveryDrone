@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using DeliveryDrone.Drone;
 
 namespace DeliveryDrone
@@ -11,7 +13,7 @@ namespace DeliveryDrone
             Drone.Drone drone, 
             DroneMemory droneMemory, 
             IEnumerable<string> deliveries,
-            int maxNumberOfStopsPerDelivery = 3)
+            int maxNumberOfStopsPerDelivery)
         {
             var result = new List<Memento>();
             drone.SetStatus(Status.ACTIVE);

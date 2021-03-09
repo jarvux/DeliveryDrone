@@ -8,24 +8,69 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="DeliveryRoutes\in01.txt">
+        <None Update="DeliveryRoutes">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+      <None Update="DeliveryRoutes\in1.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="DeliveryRoutes\in02.txt">
+      <None Update="DeliveryRoutes\in2.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="DeliveryRoutes\in03.txt">
+      <None Update="DeliveryRoutes\in3.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="DeliveryRoutes\in04.txt">
+      <None Update="DeliveryRoutes\in4.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="DeliveryRoutes\in05.txt">
+      <None Update="DeliveryRoutes\in5.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="DeliveryRoutes\in06.txt">
+      <None Update="DeliveryRoutes\in6.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="DeliveryRoutes\in7.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="DeliveryRoutes\in8.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="DeliveryRoutes\in9.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+        <None Update="DeliveryRoutes\in10.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in11.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in12.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in13.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in14.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in15.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>            
+        </None>
+        <None Update="DeliveryRoutes\in16.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in17.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in18.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in19.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DeliveryRoutes\in20.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
 </Project>
